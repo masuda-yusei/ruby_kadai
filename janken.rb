@@ -26,16 +26,21 @@ class Janken
   def pon(player_hand, enemy_hand)
     janken = ["グー", "チョキ", "パー"]
     puts "相手の手は#{janken[enemy_hand]}です"
+    while true
       if player_hand == enemy_hand
         puts "あいこ"
         true
+        break
       elsif (player_hand == 0 && enemy_hand == 1) || (player_hand == 1 && enemy_hand == 2) || (player_hand ==2 && enemy_hand == 0)
         puts "あなたの勝ちです"
         false
+        break
       else
         puts "あなたの負けです"
         false
+        break
       end
+    end
   end
 end
 
@@ -51,10 +56,6 @@ class GameStart
   end
 end
 GameStart.jankenpon
-
-
-
-
 
 
 
